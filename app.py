@@ -62,9 +62,9 @@ page = st.sidebar.radio("Go to", ["Home", "About", "Features"])
 # Function to fetch data from Yahoo Finance with error handling
 def fetch_data(ticker):
     try:
-        data = yf.download(ticker, start="2022-01-01", end="2024-01-01")
+        data = yf.download(ticker, start="2021-01-01", end="2023-01-01")
         if data.empty:
-            st.error(f"Failed to retrieve data for {ticker}. The ticker might be unavailable.")
+            st.error(f"Failed to retrieve data for {ticker}. The ticker might be unavailable. ")
         return data
     except Exception as e:
         st.error(f"Error fetching data for {ticker}: {e}")
